@@ -1,5 +1,5 @@
-/* google font : Cormorant Garamond, Noto Serif TC*/
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+TC:wght@400;500&display=swap');
+/* google font : Cormorant Garamond, Noto Serif TC (300 400 600px)*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Serif+TC:wght@300;400;600&display=swap');
 
 /*=============== VARIABLE CSS ===============*/
 :root{
@@ -9,16 +9,17 @@
 --chinese-font: 'Noto Serif TC', serif;
 
 /* font size */
---biggest-font-size: 3rem;
+--biggest-font-size: 3.5rem;
 --h1-font-size: 2rem;
 --h2-font-size: 1.5rem;
---h3-font-size: 1.25rem;
+--h3-font-size: 1.05rem;
 --normal-font-size: 1rem;
+--small-font-size: 0.895rem;
 
 /* font width */
 --font-bold: 600;
---font-semi-bold: 500;
---font-content: 400;
+--font-semi-bold: 400;
+--font-content: 300;
 }
 
 /*=============== RESET ===============*/
@@ -117,10 +118,19 @@ body{
 }
 
 /* menu item */
-.nav_item a{
-  font-size: var(--normal-font-size);
-  font-weight: var(--font-content);
+.nav_item_lable {
+  width: 20%;
+  text-align: center;
+}
+
+.nav_item_a {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-bold);
   color: #000000;
+}
+
+.nav_item:hover a{
+  font-size: var(--normal-font-size);
 }
 
 /* test */
