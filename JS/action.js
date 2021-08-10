@@ -1,4 +1,4 @@
-/*=============== Header Scrolltop ===============*/
+/*=============== hide header when  scrolling up ===============*/
 let bodyClassList = document.body.classList;
 let lastScrollY = hideHereY = displayHereY = 0;
 let hideOrNot = false;
@@ -35,8 +35,7 @@ window.addEventListener('scroll',function() {
   lastScrollY = nowScrollY
 });
 
-/*=============== nav_item text turn English ===============*/
-
+/*=============== turn navbar language to Chinese ===============*/
 // Array for Chinese textcontent
 let ch_nav_items = ['關於', '購物車', '幫助', '花卉', '樹木', '松柏', '蘭花', '多肉植物']
 
@@ -58,3 +57,9 @@ nav_items.forEach(item => item.addEventListener('mouseleave', function (e) {
 
   nav_items_a[index].textContent = eng_nav_items[index];
 }))
+
+/*=============== OPEN & CLOSE NAVBAR MENU (ON PHONE) ===============*/
+// let bar = document.querySelector('.nav_bar')
+// bar.addEventListener('click',function () {
+
+// })
