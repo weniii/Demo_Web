@@ -1,6 +1,9 @@
 /* google font : Cormorant Garamond, Noto Serif TC (300 400 600px)*/
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Serif+TC:wght@300;400;600&display=swap');
 
+/* FontAwesome */
+@import url(./FontAwesome_all.css);
+
 /*=============== VARIABLE CSS ===============*/
 :root{
 
@@ -11,7 +14,7 @@
 /* font size */
 --biggest-font-size: 3.5rem;
 --h1-font-size: 2rem;
---h2-font-size: 1.5rem;
+--h2-font-size: 1.25rem;
 --h3-font-size: 1.05rem;
 --normal-font-size: 1rem;
 --small-font-size: 0.895rem;
@@ -34,7 +37,7 @@ html{
   scroll-behavior: smooth;
 }
 
-/*=============== CONTENT ===============*/
+/*=============== BASIC SETTINGS ===============*/
 
 /* font family */
 body{
@@ -43,15 +46,14 @@ body{
 
 /*=============== NAVBAR ===============*/
 
-/* navbar */
+/* navbar container */
 .nav_container{
   position: fixed;
 
   display: flex;
   flex-wrap: wrap;
-  /* align-content: center; */
 
-  height: 20vh;
+  height: 145px;
   width: 100%;
 
   background-color: #ffffff;
@@ -60,10 +62,6 @@ body{
 
   top: 0px;
   transition: top 0.5s;
-}
-  /* scroll hidden */
-.hideHeader .nav_container {
-  top: -20%;
 }
 
 /* logo */
@@ -82,8 +80,13 @@ body{
   color: #000000;
 }
 
+/* nav_bar */
+.nav_bar {
+  display: none;
+}
+
 /* user menu */
-.nav_user_menu{
+.nav_user_menu {
   display: flex;
   justify-content: flex-end;
   
@@ -92,7 +95,7 @@ body{
 
   padding-right: 100px;
 }
-.nav_user_menu ul{
+.nav_user_menu ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -101,7 +104,7 @@ body{
 }
 
 /* sort menu */
-.nav_sort_menu{
+.nav_sort_menu {
   display: flex;
 
   width: 100%;
@@ -109,7 +112,7 @@ body{
 
   border-top: solid 1px #bdbdbb;
 }
-.nav_sort_menu ul{
+.nav_sort_menu ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -117,28 +120,122 @@ body{
   width: 50%;
 }
 
-/* menu item */
+/* all menu item */
 .nav_item_lable {
   width: 20%;
   text-align: center;
 }
-
+.nav_item {
+  margin: 10%;
+}
 .nav_item_a {
   font-size: var(--h3-font-size);
   font-weight: var(--font-bold);
   color: #000000;
 }
 
-.nav_item:hover a{
+/* for JS(hide header when  scrolling up) */
+.hideHeader .nav_container {
+  top: -152px;
+}
+
+/* for JS(turn navbar language to Chinese) */
+.nav_item:hover a {
   font-size: var(--normal-font-size);
 }
 
+
 /* test */
-div.test{
-  height: 5000px;
+div.test {
+  height: 50000px;
 }
 
-/*========== on phone ========== */
-@media (max-width: 1023px) {
 
+/*========== ON PHONE SCREEN ========== */
+@media (max-width: 1023px) {
+  /*=============== NAVBAR ===============*/
+  /* container */
+  .nav_container {
+    height: 80px;
+    width: 100vw;
+  }
+
+  /* logo */
+  .nav_logo {
+    height: inherit;
+    width: 100%;
+
+    padding-left: 30px;
+  }
+  .nav_logo a {
+    font-size: var(--h1-font-size);
+  }
+
+  /* nav_bar */
+  .nav_bar {
+    display: block;
+
+    position: absolute;
+    top: 32px;
+    right: 5%;
+  }
+
+  /* user menu */
+  .nav_user_menu {
+    display: block;
+    
+    width: 100vw;
+    height: auto;
+  }
+  .nav_user_menu ul {
+    display: block;
+
+    width: 100vw;
+    height: auto;
+  }
+
+  /* sort menu */
+  .nav_sort_menu {
+    display: block;
+
+    width: 100%;
+  
+    border-top: none;
+  }
+  .nav_sort_menu ul{
+    display: block; 
+    
+    width: 100%;
+  }
+
+  /* all menu item */
+  .nav_item {
+    width: 100%;
+    height: 5vh;
+
+    margin: 0%;
+
+    background-color: #303030;
+    
+    border-bottom: solid 1px #ffffff;
+  }
+  .nav_item_lable li:hover {
+    background-color: #bdbdbb;
+  }
+  .nav_item_a {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-bold);
+    color: #ffffff;
+    line-height: 5vh;
+  }
+
+  /* for JS(hide header when  scrolling up) */
+  .hideHeader .nav_container {
+    top: -87px;
+  }
+
+  /* for JS(turn navbar language to Chinese) */
+  .nav_item:hover a{
+    font-size: var(--h2-font-size);
+  }
 }
