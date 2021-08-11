@@ -1,5 +1,8 @@
+/*=============== ALL ===============*/
+
 /*=============== hide header when  scrolling up ===============*/
-let bodyClassList = document.body.classList;
+let nav_container = document.querySelector('.nav_container');
+let navbar_classList = nav_container.classList;
 let lastScrollY = hideHereY = displayHereY = 0;
 let hideOrNot = false;
 
@@ -16,7 +19,7 @@ window.addEventListener('scroll',function() {
     }
     // hide
     else if (hideOrNot === false && nowScrollY > hideHereY) {
-      bodyClassList.add('hideHeader');
+      navbar_classList.add('hideHeader');
       hideOrNot = true;
     }
   }
@@ -24,7 +27,7 @@ window.addEventListener('scroll',function() {
   else if(nowScrollY < lastScrollY) {
     // display
     if (nowScrollY < displayHereY && hideOrNot === true) {
-      bodyClassList.remove('hideHeader');
+      navbar_classList.remove('hideHeader');
       hideOrNot = false;
     }
     // already dsiplay
@@ -59,7 +62,10 @@ nav_items.forEach(item => item.addEventListener('mouseleave', function (e) {
 }))
 
 /*=============== OPEN & CLOSE NAVBAR MENU (ON PHONE) ===============*/
-// let bar = document.querySelector('.nav_bar')
-// bar.addEventListener('click',function () {
+let nav_bar = document.querySelector('.nav_bar')
+let body_classList = document.body.classList;
 
-// })
+nav_bar.addEventListener('click',function () {
+  nav_bar.classList.toggle('bar_active');
+  body_classList.toggle('hideMenu');
+})

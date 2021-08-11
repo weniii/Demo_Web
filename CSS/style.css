@@ -37,6 +37,8 @@ html{
   scroll-behavior: smooth;
 }
 
+/*=============== clearfix ===============*/
+
 /*=============== BASIC SETTINGS ===============*/
 
 /* font family */
@@ -135,7 +137,7 @@ body{
 }
 
 /* for JS(hide header when  scrolling up) */
-.hideHeader .nav_container {
+.hideHeader {
   top: -152px;
 }
 
@@ -144,13 +146,33 @@ body{
   font-size: var(--normal-font-size);
 }
 
+/*=============== UNDER HEADER ===============*/
+.under_header {
+  height: 152px;
+  width: 100vw;
+  background-color: #f7f5f5;
+}
 
-/* test */
+/*=============== REMIND ===============*/
+.remind_container {
+  height: 25px;
+  width: 100vw;
+  background-color: #fca99b;
+
+  overflow: hidden;
+}
+.remind {
+  display: inline-block;
+  width: inherit;
+  text-align: center;
+}
+
+/*=============== test ===============*/
 div.test {
   height: 50000px;
 }
 
-
+/*=============== ********** ===============*/
 /*========== ON PHONE SCREEN ========== */
 @media (max-width: 1023px) {
   /*=============== NAVBAR ===============*/
@@ -174,18 +196,28 @@ div.test {
   /* nav_bar */
   .nav_bar {
     display: block;
-
     position: absolute;
-    top: 32px;
+    top: 30px;
     right: 5%;
+
+  }
+  .nav_bar .fa-minus {
+    display: block;
+
+    height: 4px;
   }
 
   /* user menu */
-  .nav_user_menu {
+  .nav_user_menu {    
     display: block;
-    
+
     width: 100vw;
     height: auto;
+
+    position: relative;
+    right: -100%;
+    opacity: 0;
+    transition: 0.3s;
   }
   .nav_user_menu ul {
     display: block;
@@ -201,6 +233,11 @@ div.test {
     width: 100%;
   
     border-top: none;
+
+    position: relative;
+    right: -100%;
+    opacity: 0;
+    transition: 0.3s;
   }
   .nav_sort_menu ul{
     display: block; 
@@ -211,9 +248,11 @@ div.test {
   /* all menu item */
   .nav_item {
     width: 100%;
-    height: 5vh;
+    height: 10vh;
 
     margin: 0%;
+
+    line-height: 10vh;
 
     background-color: #303030;
     
@@ -229,13 +268,43 @@ div.test {
     line-height: 5vh;
   }
 
-  /* for JS(hide header when  scrolling up) */
-  .hideHeader .nav_container {
+  /*=============== for JS(hide header when  scrolling up) ===============*/
+  .hideHeader {
     top: -87px;
   }
 
-  /* for JS(turn navbar language to Chinese) */
+  /*=============== for JS(turn navbar language to Chinese) ===============*/
   .nav_item:hover a{
     font-size: var(--h2-font-size);
+  }
+
+  /*=============== for JS(OPEN & CLOSE NAVBAR MENU (ON PHONE)) ===============*/
+  /* bar */
+  .nav_bar i {
+    transition: all 0.3s ease-out;
+  }
+  .bar_active i:nth-child(2) {
+    opacity: 0;
+  }
+  .bar_active i:nth-child(1) {
+    transform: translateX(4px) translateY(4px) rotate(45deg);
+  }
+  .bar_active i:nth-child(3) {
+    transform: translateX(-4px) translateY(-4px) rotate(-45deg);
+  }
+  /* menu */
+  .hideMenu .nav_user_menu {
+    right: 0;
+    opacity: 1;
+  }
+  .hideMenu .nav_sort_menu {
+    right: 0;
+    opacity: 1;
+  }
+
+  /*=============== UNDER HEADER ===============*/
+  .under_header {
+    height: 87px;
+    width: 100vw;
   }
 }
